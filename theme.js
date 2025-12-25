@@ -1,5 +1,5 @@
 <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const toggleBtn = document.getElementById('themeToggle');
             const currentTheme = localStorage.getItem('theme');
         
