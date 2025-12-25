@@ -6,8 +6,34 @@
     <title>Hamad Rashid | Backend Laravel Developer</title>
     <meta name="description" content="Backend Laravel Developer specializing in scalable web applications, APIs, payments, and performance optimization.">
     <link rel="stylesheet" href="style.css">
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme');
+    
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            toggleBtn.textContent = '☀️ Light';
+        }
+    
+        toggleBtn.addEventListener('click', () => {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    
+            if (isLight) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '🌙 Dark';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '☀️ Light';
+            }
+        });
+    </script>
 </head>
 <body>
+    <button class="theme-toggle" id="themeToggle">
+    🌙 Dark
+    </button>
 <header>
     <h1>Hamad Rashid</h1>
     <p class="subtitle">Backend Laravel Developer</p>
@@ -101,31 +127,4 @@
 </footer>
 
 </body>
-    <button class="theme-toggle" id="themeToggle">
-    🌙 Dark
-    </button>
-
-    <script>
-    const toggleBtn = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        toggleBtn.textContent = '☀️ Light';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-
-        if (isLight) {
-            document.documentElement.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'dark');
-            toggleBtn.textContent = '🌙 Dark';
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            toggleBtn.textContent = '☀️ Light';
-        }
-    });
-</script>
 </html>
